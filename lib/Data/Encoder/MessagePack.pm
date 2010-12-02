@@ -8,7 +8,7 @@ our $VERSION = '0.01';
 
 sub new {
     my ($class) = @_;
-    bless \do { "" }, __PACKAGE__;
+    bless \my $obj, __PACKAGE__;
 }
 
 sub encode {
