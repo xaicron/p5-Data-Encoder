@@ -30,7 +30,13 @@ all_pod_files_spelling_ok('lib');
 
 __DATA__
 Data::Encoder
+API
+serializer
 
 # personal section
 xaicron
 xaicron {at} cpan.org
+
+zigorou
+tokuhirom
+kazuhooku

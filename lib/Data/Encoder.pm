@@ -46,7 +46,7 @@ Data::Encoder - Generic interface for perl encoder or serializer
 
   use Data::Encoder;
 
-  my $encoder = Data::Encoder->('JSON');
+  my $encoder = Data::Encoder->load('JSON');
   my $json = $encoder->encode(['foo']);
   my $data = $encoder->decode($json);
 
@@ -54,17 +54,57 @@ Data::Encoder - Generic interface for perl encoder or serializer
 
 Data::Encoder is generic interface for perl encoder or serializer
 
+This module is inspired L<Tiffany>
+
 THIS MODULE IS IN ITS BETA QUALITY. THE API IS STOLEN FROM TILT BUT MAY CHANGE IN THE FUTURE.
 
-=head1 METHOD
+=head1 FACTORY METHOD
+
+Data::Encoder.pm acts as a factory for Data::Encoder::* classes, which in turn are the actual adapter classes for each encoder.
 
 =over
 
-=item new($class, \%args)
+=item my $encoder = Data::Encoder->load($klass, $args)
+
+Load Data::Encoder::* class if necessary, and create new instance of using the given arguments.
+
+  my $encoder = Data::Encoder->load('JSON', +{ utf8 => 1, pretty => 1 });
+
+  my $encoder = Data::Encoder->load('+My::Encoder', +{ option => 'foo' });
+
+=back
+
+=head1 The Data::Encoder Protocol
+
+=over
+
+=item my $encoder = Data::Encoder::Thing->new([$args:HashRef|ArrayRef])
+
+The module SHOULD have a C<<new>> method.
+
+This method creates a new instance of Data::Encoder module.
+
+=item my $encoded = $encoder->encode($stuff [, @args]);
+
+The module SHOULD have a C<<encode>> method.
+
+=item my $decoded = $encoder->decode($stuff [, @args]);
+
+The module SHOULD have a C<<decod>> method.
+
+=back
 
 =head1 AUTHOR
 
 xaicron E<lt>xaicron {at} cpan.orgE<gt>
+
+=head1 THANKS TO
+
+zigorou
+
+tokuhirom
+
+kazuhooku
 
 =head1 COPYRIGHT
 
