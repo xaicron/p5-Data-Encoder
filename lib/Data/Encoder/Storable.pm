@@ -7,9 +7,8 @@ use 5.008_001;
 our $VERSION = '0.01';
 
 sub new {
-    my ($class, $args) = @_;
-    $args ||= {};
-    bless { %$args }, __PACKAGE__;
+    my ($class) = @_;
+    bless \do { "" }, __PACKAGE__;
 }
 
 sub encode {
