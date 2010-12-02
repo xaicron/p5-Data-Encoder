@@ -10,6 +10,7 @@ sub new {
     my ($class, $args) = @_;
     my $json = JSON->new;
 
+    $args ||= {};
     for my $method (keys %$args) {
         $json->$method(defined $args->{$method} ? $args->{$method} : ());
     }
