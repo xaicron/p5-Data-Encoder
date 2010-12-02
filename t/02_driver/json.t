@@ -6,7 +6,9 @@ use Test::More;
 
 subtest 'simple' => sub {
     my $encoder = Data::Encoder::JSON->new;
-    is $encoder->encode(['foo']), '["foo"]';
+    my $data = $encoder->encode(['foo']);
+    is $data, '["foo"]';
+    is_deeply $encoder->decode($data), ['foo'];
 
     done_testing;
 };
