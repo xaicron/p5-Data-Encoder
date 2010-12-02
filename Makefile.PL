@@ -5,6 +5,7 @@ all_from 'lib/Data/Encoder.pm';
 #requires '';
 
 #build_requires '';
+recommends 'JSON';
 test_requires 'Test::More', 0.96;
 
 tests join q{ }, map { sprintf 't%s.t', '/*' x $_ } 1..3;

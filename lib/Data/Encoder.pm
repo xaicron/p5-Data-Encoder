@@ -5,6 +5,32 @@ use warnings;
 use 5.008_001;
 our $VERSION = '0.01';
 
+sub new {
+    my ($class, $klass, $args) = @_;
+    $klass = _load_class($klass, __PACKAGE__);
+    return $klass->new($args);
+}
+
+# code taken from Tiffany
+my %loaded;
+sub _load_class {
+    my ( $class, $prefix ) = @_;
+
+    if ($prefix) {
+        unless ( $class =~ s/^\+// || $class =~ /^$prefix/ ) {
+            $class = "$prefix\::$class";
+        }
+    }
+
+    return $class if $loaded{$class}++;
+
+    my $file = $class;
+    $file =~ s!::!/!g;
+    require "$file.pm";    ## no critic
+
+    return $class;
+}
+
 1;
 __END__
 
