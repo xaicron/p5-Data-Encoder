@@ -24,7 +24,7 @@ sub encode {
     $self->{json}->encode($stuff, @args);
 }
 
-sub deocde {
+sub decode {
     my ($self, $stuff, @args) = @_;
     $self->{json}->decode($stuff, @args);
 }
