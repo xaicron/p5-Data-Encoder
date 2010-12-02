@@ -9,6 +9,11 @@ our $VERSION = '0.01';
 sub new {
     my ($class, $args) = @_;
     my $json = JSON->new;
+
+    for my $method (keys %$args) {
+        $json->$method(defined $args->{$method} ? $args->{$method} : ());
+    }
+
     bless {
         json => $json,
     }, __PACKAGE__;
