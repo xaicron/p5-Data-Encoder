@@ -5,7 +5,7 @@ use warnings;
 use 5.008_001;
 our $VERSION = '0.01';
 
-sub new {
+sub load {
     my ($class, $klass, $args) = @_;
     $klass = _load_class($klass, __PACKAGE__);
     return $klass->new($args);
@@ -40,15 +40,27 @@ __END__
 
 =head1 NAME
 
-Data::Encoder -
+Data::Encoder - Generic interface for perl encoder or serializer
 
 =head1 SYNOPSIS
 
   use Data::Encoder;
 
+  my $encoder = Data::Encoder->('JSON');
+  my $json = $encoder->encode(['foo']);
+  my $data = $encoder->decode($json);
+
 =head1 DESCRIPTION
 
-Data::Encoder is
+Data::Encoder is generic interface for perl encoder or serializer
+
+THIS MODULE IS IN ITS BETA QUALITY. THE API IS STOLEN FROM TILT BUT MAY CHANGE IN THE FUTURE.
+
+=head1 METHOD
+
+=over
+
+=item new($class, \%args)
 
 =head1 AUTHOR
 
