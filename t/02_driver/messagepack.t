@@ -7,7 +7,7 @@ use Test::More;
 subtest 'simple' => sub {
     my $encoder = Data::Encoder::MessagePack->new;
     ok my $data = $encoder->encode(['foo']);
-    is_deeply $encoder->deocde($data), ['foo'];
+    is_deeply $encoder->decode($data), ['foo'];
 
     done_testing;
 };

@@ -16,7 +16,7 @@ sub encode {
     Data::MessagePack->pack($stuff);
 }
 
-sub deocde {
+sub decode {
     my ($self, $stuff, @args) = @_;
     Data::MessagePack->unpack($stuff);
 }

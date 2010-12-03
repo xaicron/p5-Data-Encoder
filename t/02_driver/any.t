@@ -18,7 +18,7 @@ subtest 'simple' => sub {
     });
 
     is $encoder->encode('Hoge'), 'hOGE';
-    is $encoder->deocde('hOGE'), 'Hoge';
+    is $encoder->decode('hOGE'), 'Hoge';
 
     done_testing;
 };

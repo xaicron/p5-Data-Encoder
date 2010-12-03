@@ -16,7 +16,7 @@ sub encode {
     $self->{encoder}->($stuff, @args);
 }
 
-sub deocde {
+sub decode {
     my ($self, $stuff, @args) = @_;
     $self->{decoder}->($stuff, @args);
 }

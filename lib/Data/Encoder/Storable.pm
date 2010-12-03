@@ -16,7 +16,7 @@ sub encode {
     Storable::nfreeze($stuff);
 }
 
-sub deocde {
+sub decode {
     my ($self, $stuff, @args) = @_;
     Storable::thaw($stuff);
 }
