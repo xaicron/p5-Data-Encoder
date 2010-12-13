@@ -1,11 +1,11 @@
 use strict;
 use warnings;
 use Test::Requires 'Data::MessagePack';
-use Data::Encoder::MessagePack;
+use Data::Encoder::Data::MessagePack;
 use Test::More;
 
 subtest 'simple' => sub {
-    my $encoder = Data::Encoder::MessagePack->new;
+    my $encoder = Data::Encoder::Data::MessagePack->new;
     ok my $data = $encoder->encode(['foo']);
     is_deeply $encoder->decode($data), ['foo'];
 

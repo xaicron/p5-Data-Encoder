@@ -1,4 +1,4 @@
-package Data::Encoder::MessagePack;
+package Data::Encoder::Data::MessagePack;
 
 use strict;
 use warnings;
