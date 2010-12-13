@@ -3,8 +3,6 @@ package Data::Encoder::MessagePack;
 use strict;
 use warnings;
 use Data::MessagePack;
-use 5.008_001;
-our $VERSION = '0.01';
 
 sub new {
     my ($class) = @_;

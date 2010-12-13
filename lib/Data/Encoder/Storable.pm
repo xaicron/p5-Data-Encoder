@@ -3,8 +3,6 @@ package Data::Encoder::Storable;
 use strict;
 use warnings;
 use Storable;
-use 5.008_001;
-our $VERSION = '0.01';
 
 sub new {
     my ($class) = @_;

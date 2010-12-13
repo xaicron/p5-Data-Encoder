@@ -3,8 +3,6 @@ package Data::Encoder::JSON;
 use strict;
 use warnings;
 use JSON;
-use 5.008_001;
-our $VERSION = '0.01';
 
 sub new {
     my ($class, $args) = @_;
