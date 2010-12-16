@@ -28,15 +28,15 @@ __END__
 
 =head1 NAME
 
-Data::Encoder -
+Data::Encoder::Storable - Data::Encoder gateway for Storable
 
 =head1 SYNOPSIS
 
   use Data::Encoder;
-
-=head1 DESCRIPTION
-
-Data::Encoder is
+  
+  my $encoder = Data::Encoder->load('Storable');
+  my $packed = $encoder->encode($data);
+  my $unpacked = $encoder->decode($packed);
 
 =head1 AUTHOR
 
@@ -52,5 +52,7 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 SEE ALSO
+
+L<Storable>
 
 =cut

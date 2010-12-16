@@ -37,15 +37,18 @@ __END__
 
 =head1 NAME
 
-Data::Encoder -
+Data::Encoder::JSON - Data::Encoder gateway for JSON
 
 =head1 SYNOPSIS
 
   use Data::Encoder;
-
-=head1 DESCRIPTION
-
-Data::Encoder is
+  
+  my $encoder = Data::Encoder->load('JSON');
+  my $json = $encoder->encode([qw/foo bar/]);
+  my $data = $encoder->decode($json);
+  
+  my $encoder = Data::Encoder->load('JSON', { utf8 => 1, pretty => 1 });
+  ## JSON->new->utf8(1)->pretty(1);
 
 =head1 AUTHOR
 
@@ -61,5 +64,7 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 SEE ALSO
+
+L<JSON>
 
 =cut

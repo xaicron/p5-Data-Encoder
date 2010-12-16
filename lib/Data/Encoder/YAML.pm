@@ -28,15 +28,15 @@ __END__
 
 =head1 NAME
 
-Data::Encoder -
+Data::Encoder::YAML - Data::Encoder gateway for YAML
 
 =head1 SYNOPSIS
 
   use Data::Encoder;
-
-=head1 DESCRIPTION
-
-Data::Encoder is
+  
+  my $encoder = Data::Encoder->load('YAML');
+  my $yaml = $encoder->encode({ foo => 'bar' });
+  my $data = $encoder->decode($yaml);
 
 =head1 AUTHOR
 
@@ -52,5 +52,7 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 SEE ALSO
+
+L<YAML>
 
 =cut

@@ -1,4 +1,4 @@
-package Data::Encoder::Any;
+package Data::Encoder::Custom;
 
 use strict;
 use warnings;
@@ -28,15 +28,18 @@ __END__
 
 =head1 NAME
 
-Data::Encoder -
+Data::Encoder::Custom - Data::Encoder gateway for customizable
 
 =head1 SYNOPSIS
 
   use Data::Encoder;
-
-=head1 DESCRIPTION
-
-Data::Encoder is
+  
+  my $encoder = Data::Encoder->load('Custom', {
+      encoder => sub { ... },
+      decoder => sub { ... },
+  });
+  my $encoded = $encoder->encode($data);
+  my $decoded = $encoder->deocde($encoded);
 
 =head1 AUTHOR
 
@@ -50,7 +53,5 @@ Copyright 2010 - xaicron
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
-
-=head1 SEE ALSO
 
 =cut

@@ -28,15 +28,15 @@ __END__
 
 =head1 NAME
 
-Data::Encoder -
+Data::Encoder::Data::MessagePack - Data::Encoder gateway for Data::MessagePack
 
 =head1 SYNOPSIS
 
   use Data::Encoder;
-
-=head1 DESCRIPTION
-
-Data::Encoder is
+  
+  my $encoder = Data::Encoder->load('Data::MessagePack');
+  my $packed = $encoder->encode([qw/foo bar/]);
+  my $unpacked = $encoder->deocde($packed);
 
 =head1 AUTHOR
 
@@ -52,5 +52,7 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 SEE ALSO
+
+L<Data::MessagePack>
 
 =cut

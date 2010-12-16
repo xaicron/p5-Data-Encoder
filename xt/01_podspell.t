@@ -32,6 +32,9 @@ __DATA__
 Data::Encoder
 API
 serializer
+JSON
+YAML
+Storable
 
 # personal section
 xaicron
