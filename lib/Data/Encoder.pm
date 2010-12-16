@@ -62,21 +62,21 @@ THIS MODULE IS IN ITS BETA QUALITY. THE API IS STOLEN FROM TILT BUT MAY CHANGE I
 
 Data::Encoder.pm acts as a factory for Data::Encoder::* classes, which in turn are the actual adapter classes for each encoder.
 
-=over
+=over 4
 
 =item my $encoder = Data::Encoder->load($klass, $args)
 
 Load Data::Encoder::* class if necessary, and create new instance of using the given arguments.
 
   my $encoder = Data::Encoder->load('JSON', +{ utf8 => 1, pretty => 1 });
-
+  
   my $encoder = Data::Encoder->load('+My::Encoder', +{ option => 'foo' });
 
 =back
 
 =head1 The Data::Encoder Protocol
 
-=over
+=over 4
 
 =item my $encoder = Data::Encoder::Thing->new([$args:HashRef|ArrayRef])
 
