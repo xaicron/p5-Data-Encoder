@@ -1,10 +1,10 @@
 use strict;
 use warnings;
-use Data::Encoder::Any;
+use Data::Encoder::Custom;
 use Test::More;
 
 subtest 'simple' => sub {
-    my $encoder = Data::Encoder::Any->new({
+    my $encoder = Data::Encoder::Custom->new({
         encoder => sub {
             my ($stuff, @args) = @_;
             $stuff =~ tr/a-zA-Z/A-Za-z/;
