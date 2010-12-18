@@ -1,5 +1,8 @@
 Revision history for Perl extension Data::Encoder
 
+0.03  Sat Dec 18 16:40:38 2010
+    - fixed fail test
+
 0.02  Fri Dec 17 01:51:06 2010
     - first release
 
