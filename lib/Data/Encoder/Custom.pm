@@ -28,7 +28,7 @@ __END__
 
 =head1 NAME
 
-Data::Encoder::Custom - Data::Encoder gateway for customizable
+Data::Encoder::Custom - Data::Encoder gateway for custom
 
 =head1 SYNOPSIS
 
