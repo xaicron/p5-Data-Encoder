@@ -1,5 +1,8 @@
 Revision history for Perl extension Data::Encoder
 
+0.04  Sat Sep 10 14:55:06 2011
+    - support ooish interface for Data::MessagePack
+
 0.03  Sat Dec 18 16:40:38 2010
     - fixed fail test
 
