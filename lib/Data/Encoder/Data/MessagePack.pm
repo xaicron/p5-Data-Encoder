@@ -4,19 +4,29 @@ use strict;
 use warnings;
 use Data::MessagePack;
 
+my $ooish = $Data::MessagePack::VERSION >= 0.36;
+
 sub new {
-    my ($class) = @_;
-    bless \my $obj, __PACKAGE__;
+    my ($class, $args) = @_;
+    my $mp = 'Data::MessagePack';
+    if ($ooish) {
+        $mp = Data::MessagePack->new;
+        $args ||= {};
+        for my $method (keys %$args) {
+            $mp->$method(defined $args->{$method} ? $args->{$method} : ());
+        }
+    }
+    bless { mp => $mp }, __PACKAGE__;
 }
 
 sub encode {
     my ($self, $stuff, @args) = @_;
-    Data::MessagePack->pack($stuff);
+    $self->{mp}->pack($stuff);
 }
 
 sub decode {
     my ($self, $stuff, @args) = @_;
-    Data::MessagePack->unpack($stuff);
+    $self->{mp}->unpack($stuff);
 }
 
 1;

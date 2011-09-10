@@ -13,4 +13,20 @@ subtest 'simple' => sub {
     done_testing;
 };
 
+if ($Data::MessagePack::VERSION >= 0.36) {
+    subtest 'ooish' => sub {
+        my $encoder = Data::Encoder::Data::MessagePack->new({
+            utf8           => 1,
+            prefer_integer => 1,
+            canonical      => 1,
+        });
+        my $data = $encoder->encode({ a => 0.11, b => "\x{3042}" });
+        is $data, Data::MessagePack->new->canonical(1)->utf8(1)->prefer_integer(1)->pack({
+            a => 0.11,
+            b => "\x{3042}",
+        });
+        is_deeply $encoder->decode($data), { a => 0.11, b => "\x{3042}" };
+    };
+}
+
 done_testing;
