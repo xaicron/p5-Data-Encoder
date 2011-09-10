@@ -26,7 +26,7 @@ sub encode {
 sub decode {
     my ($self, $stuff, @args) = @_;
     local $@;
-    my $res = eval $stuff;
+    my $res = eval $stuff; ## no critic
     Carp::croak $@ if $@;
     return $res;
 }
