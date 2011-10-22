@@ -3,6 +3,9 @@ use warnings;
 use Test::Requires 'Data::Dumper';
 use Data::Encoder::Data::Dumper;
 use Test::More;
+use t::Util;
+
+show_version('Data::Dumper');
 
 subtest 'simple' => sub {
     my $encoder = Data::Encoder::Data::Dumper->new;

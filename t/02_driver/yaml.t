@@ -3,6 +3,9 @@ use warnings;
 use Test::Requires 'YAML';
 use Data::Encoder::YAML;
 use Test::More;
+use t::Util;
+
+show_version('YAML');
 
 subtest 'simple' => sub {
     my $encoder = Data::Encoder::YAML->new;

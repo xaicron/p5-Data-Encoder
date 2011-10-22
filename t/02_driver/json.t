@@ -3,6 +3,9 @@ use warnings;
 use Test::Requires 'JSON';
 use Data::Encoder::JSON;
 use Test::More;
+use t::Util;
+
+show_version('JSON');
 
 subtest 'simple' => sub {
     my $encoder = Data::Encoder::JSON->new;

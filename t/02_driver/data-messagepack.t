@@ -3,6 +3,9 @@ use warnings;
 use Test::Requires 'Data::MessagePack';
 use Data::Encoder::Data::MessagePack;
 use Test::More;
+use t::Util;
+
+show_version('Data::MessagePack');
 
 subtest 'simple' => sub {
     my $encoder = Data::Encoder::Data::MessagePack->new;
