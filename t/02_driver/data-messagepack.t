@@ -23,12 +23,12 @@ if ($Data::MessagePack::VERSION >= 0.36) {
             prefer_integer => 1,
             canonical      => 1,
         });
-        my $data = $encoder->encode({ a => 0.11, b => "\x{3042}" });
+        my $data = $encoder->encode({ a => 10, b => "\x{3042}" });
         is $data, Data::MessagePack->new->canonical(1)->utf8(1)->prefer_integer(1)->pack({
-            a => 0.11,
+            a => 10,
             b => "\x{3042}",
         });
-        is_deeply $encoder->decode($data), { a => 0.11, b => "\x{3042}" };
+        is_deeply $encoder->decode($data), { a => 10, b => "\x{3042}" };
     };
 }
 
