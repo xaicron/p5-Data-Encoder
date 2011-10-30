@@ -3,7 +3,7 @@ package Data::Encoder;
 use strict;
 use warnings;
 use 5.008_001;
-our $VERSION = '0.04_01';
+our $VERSION = '0.05';
 
 sub load {
     my ($class, $klass, $args) = @_;
